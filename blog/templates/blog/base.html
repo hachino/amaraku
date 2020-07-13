@@ -1,0 +1,43 @@
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% load widget_tweaks %}
+
+<!doctype html>
+<html lang="jp">
+  <head>
+    <link rel="icon" type="image/png" href="{% static 'image/favicon.png' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	{% block header %}
+	{% endblock %}
+    <title>{% block title %}アマラク{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <header class="sticky-top bg-danger text-white">
+    <nav class="navbar navbar-expand-md navbar-light bg-danger mb-3">
+        <a class="navbar-bland" href="http://127.0.0.1:8000"><img id='navicon' src="{% static 'image/navicon.png' %}"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="ナビゲーションの切替">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link text-white ml-2" href="http://127.0.0.1:8000/">ホーム</a>
+                <a class="nav-item nav-link text-white ml-2" href="http://127.0.0.1:8000/rank/cosme/1">コスメ</a>
+                <a class="nav-item nav-link text-white ml-2" href="http://127.0.0.1:8000/rank/pet/1">ペット</a>
+                <a class="nav-item nav-link text-white ml-2" href="http://127.0.0.1:8000/rank/kaden/1">パソコン/周辺機器</a>
+                <a class="nav-item nav-link text-white ml-2" href="http://127.0.0.1:8000/about">about</a>
+            </div>
+        </div>
+    </nav>
+  </header>
+  <body>
+    <script type="text/javascript" src="{% static 'js/price.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/js.cookie.js' %}"></script>
+    <div class="container-fluid maxwidth">
+	    {% block content %}
+	    {% endblock %}
+    </div>
+   </body>
+</html>

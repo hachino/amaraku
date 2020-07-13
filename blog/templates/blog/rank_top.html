@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="p-3 mb-3">
+    <img class='img-fluid rounded' src="{% static 'image/top_main2.png' %}">
+</div>
+
+<div>
+    <a class="btn btn-primary" href="http://127.0.0.1:8000/rank/cosme/1">コスメ</a>
+    <a class="btn btn-primary" href="http://127.0.0.1:8000/rank/pet/1">ペット</a>
+    <a class="btn btn-primary" href="http://127.0.0.1:8000/rank/kaden/1">PC周辺機器</a>
+</div>
+
+<section>
+<div class="container mb-3">
+    <div class="col">
+        {% for item in otoku_items %}
+        <div class='col-12 text-center p-2 mb-3 mt-3'>
+            <img class='img-fluid rounded' src="{{item.5}}">
+        </div>
+        <div class='col-12 border-bottom border-secondary'>
+            <a class="font-small" href="{{item.1}}">{{item.0}}</a>
+            <p class='rakpricetop mb-1' id='rakp'>楽天：{{item.3}}<a id='yen'>円</a></p>
+            <p class="amapricetop mb-3">Amazon：{{item.7}}<a id="yen">円</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="p-3 mb-3">
+        <img class='img-fluid rounded' src="{% static 'image/otokuhukidasi.png' %}">
+    </div>
+</div>
+</section>
+{% endblock %}

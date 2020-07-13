@@ -1,0 +1,144 @@
+#gettime{
+    color: gray;
+    font-size: 80%;
+    text-align: right;
+    margin-bottom: 0px;
+}
+
+#otoku{
+    font-size: 130%;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    text-align: center;
+}
+
+#kurai{
+    font-size: 60%;
+}
+
+#yen{
+    font-size: 80%;
+}
+
+#pointyen {
+    font-size: 110%;
+    color: #bf0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+#pointkangengo {
+    font-size: 150%;
+    color: #bf0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+#otokuimage {
+    height: 40px;
+}
+
+#topimage {
+    width: 250px;
+    height: 250px;
+}
+
+#navicon {
+    height: 50px;
+}
+
+#topimage {
+    height: 250px;
+}
+
+h1.midasi {
+    margin-top: 15px;
+    font-size: 150%;
+    position: relative;
+    padding: 0;
+  }
+  h1.midasi:after {
+    content: "";
+    display: block;
+    height: 4px;
+    background: -webkit-linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+    background: linear-gradient(to right, rgb(255, 186, 115), #ffb2b2);
+  }
+
+.pointkangen{
+    font-size: 40%;
+    background-color: yellow;
+    font-weight: bold;
+    text-align: center;  
+}
+
+.maxwidth{
+    max-width: 600px;
+}
+
+.text-center{
+    text-align: center;
+    margin-bottom: 0em;
+}
+
+p.rakprice {
+    font-size: 130%;
+    color: #bf0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+p.rakpricetop {
+    font-size: 170%;
+    color: #bf0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+p.amaprice {
+    font-size: 130%;
+    color: #008000;
+    font-weight: bold;
+    text-align: center;
+}
+
+p.amapricetop {
+    font-size: 150%;
+    color: #008000;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.image_size_m{
+	width: 100px;
+}
+
+p.rank {
+    font-size: 140%;
+    color: #bf0000;
+    font-weight: bold;
+}
+
+a.top {
+    color: #bf0000;
+}
+
+.font-small {
+    font-size: 0.9em;
+}
+
+.shop-font {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+p a.yen {
+    font-size: 0.9em;
+}
+
+ul {
+    list-style-type: square;
+}

@@ -1,0 +1,114 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    <nav aria-label="ページ送りの実例">
+        <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/1">1-100位</a></li>
+        <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/2">101-200位</a></li>
+        <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/3">201-300位</a></li>
+        </ul>
+    </nav>
+<div>
+<div class="border-bottom">
+    <ul class="list-group">
+        <li class="list-group-item pl-1 p-2">5と0のつく日：<a id=goto>{{gotopoint}}</a></li>
+        <li class="list-group-item pl-1 p-2">マラソン:
+            <select name= "marathon" id="marathon">
+                <option value="0">-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </li>
+        <li class="list-group-item pl-1 p-2">SPU:
+            <select name="spu" id="spu">
+                <option value="0">-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+        </li>
+        <button id="price" class="mb-2 btn btn-warning btn-sm">ポイント計算!!</button>
+        <script type="text/javascript" src="{% static 'js/price.js' %}"></script>
+    </ul>
+</div>
+<h1 class='midasi mt-4'>{{shopname}}ランキング</h1>
+<p id='gettime'>更新：{{gettime}}</p>
+{% for item in itemlist %}
+
+<div class="border-bottom border-dark pb-1">
+    <div name="rank2shop" class="mt-1">
+        <p class="rank mr-1 mb-1">{{item.4}}<a id='kurai'>位</a></p>
+        <a class="font-small" href="{{item.1}}">{{item.0}}</a>
+        <p class="shop-font ml-1 mb-1 mt-1">{{item.2}}</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-5 p-0 text-center">
+                <img src="{{item.5}}" class="rounded img-fluid">
+            </div>
+            <div class="col-7 p-0 text-center">
+                <div class="d-flex mt-2">
+                    <div class='oya'>
+                        <p class="text-center">楽天</p>
+                        <p class='rakprice mb-1' id='rakp'><a>{{item.3}}</a><a id='yen'>円</a></p>
+                        <a id='pointkangengo'></a><a id='pointyen'>円</a>
+                        <p class='pointkangen mt-0'>ポイント還元後!!</p>
+                    </div> 
+                    {% if item.7 != "" %}
+                    <div class='ml-3'>
+                        <p class='text-center'>Amazon</p>
+                        <p class="amaprice mb-1">{{item.7}}<a id="yen">円</a></p>
+                        {% if item.12 == "1" %}
+                        <p class='text-center'>
+                            <img id="otokuimage" src="{% static 'image/otoku_icon2.png'%}">
+                        </p>
+                        {% endif %}
+                    </div>
+                    {% endif%}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if item.7 != "" %}
+    <!-- <div class="d-flex flex-row"> -->
+        <div class="p-1">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-1">Amazonランキング：{{item.11}}</li>
+                <li class="list-group-item p-1">FBA手数料：{{item.8}}円</li>
+                <li class="list-group-item p-1">セラー数：<a href="https://www.amazon.co.jp/gp/offer-listing/{{item.6}}?&condition=new">{{item.9}}</a></li>
+                <li class="list-group-item p-1">ASIN：<a href="https://keepa.com/#!product/5-{{item.6}}" role="button">{{item.6}}</a></li>
+            </ul>
+        </div>
+
+    <!-- </div> -->
+    {% endif %}
+</div>
+{% endfor %}
+<nav class="mt-3" aria-label="ページ送りの実例">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/1">1-100位</a></li>
+      <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/2">101-200位</a></li>
+      <li class="page-item"><a class="page-link" href="http://127.0.0.1:8000/rank/{{shop}}/3">201-300位</a></li>
+    </ul>
+</nav>
+{% endblock %}
